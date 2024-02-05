@@ -3,7 +3,7 @@ const app = express()
 const dotenv = require('dotenv');
 dotenv.config();
 const port = 5000
-const stripe = require('stripe')(env.process.STRIPE_KEY);
+const stripe = require('stripe')(process.env.STRIPE_KEY);
 const fs = require('fs')
 const { MongoClient } = require('mongodb')
 const cors = require('cors')
@@ -15,7 +15,7 @@ app.use(cors())
 
 
 
-uri = env.process.URI
+uri = process.env.STRIPE_KEY
 app.get('/getData', async (req,res)=>{
   const client = new MongoClient(uri);
 try {
