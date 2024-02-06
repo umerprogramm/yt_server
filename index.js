@@ -90,11 +90,7 @@ if(result){
 
 
 app.get('/', (req, res) => {
-const query = req.query.v
-const videoStream = fs.createReadStream(`${query}.mp4`)
-res.writeHead(200,{'Content-Type' : 'video/mp4'})
-videoStream.pipe(res)
-console.log(query)
+res.send('welcome to.utube server')
 })
 
 app.listen(port, () => {
