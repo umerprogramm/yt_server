@@ -10,7 +10,13 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 
 app.use(bodyParser.json())
-app.use(cors())
+const corsOptions = {
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 
 
 
