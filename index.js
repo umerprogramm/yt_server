@@ -21,7 +21,7 @@ app.options('*', cors(corsOptions));
 
 
 
-uri = process.env.STRIPE_KEY
+uri = process.env.URI
 app.get('/getData', async (req,res)=>{
   const client = new MongoClient(uri);
 try {
